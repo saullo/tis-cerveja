@@ -10,21 +10,22 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="scripts/product.js"></script>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Arte do malte</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        
-      </div>
-    </nav>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Arte do malte</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      
+    </div>
+  </nav>
   <div class="container-fluid" style="margin-top:10px;">
     <div class="row">
-      <div class="col-2">
+      <div class="col-lg-4">
         <img src="imagens/cerveja1.webp" class="img-fluid">
       </div>
       <div class="col">
@@ -45,24 +46,14 @@
       </div>
       <div class="col-lg-5 col-sm-12">
         <h4>Menores preços</h4>
-        <div class="card-deck mb-3 text-center">
-          <div class="card mb-4 shadow-sm">
+        <div class="card-deck mb-3 text-center" id="mercado-precos">
+          <div class="card mb-4 shadow-sm" id="mercado-precos-card">
             <div class="card-header">
-              <h4 class="my-0 font-weight-normal">Extra</h4>
+              <h4 class="my-0 font-weight-normal" id="title"></h4>
             </div>
-            <img src="imagens/extra.jpg" class="card-img-top" alt="#">
+            <img id="imagem" class="card-img-top" alt="#">
             <div class="card-body">
-              <h1 class="card-title pricing-card-title">R$13,00</h1>
-              <button type="button" class="btn btn-lg btn-block btn-outline-primary">Localização</button>
-            </div>
-          </div>
-          <div class="card mb-4 shadow-sm">
-            <div class="card-header">
-              <h4 class="my-0 font-weight-normal">ABC</h4>
-            </div>
-            <img src="imagens/abc.png" class="card-img-top" alt="#">
-            <div class="card-body">
-              <h1 class="card-title pricing-card-title">R$13,10</h1>
+              <h1 class="card-title pricing-card-title" id="preco"></h1>
               <button type="button" class="btn btn-lg btn-block btn-outline-primary">Localização</button>
             </div>
           </div>
@@ -73,54 +64,14 @@
     <div class="row">
       <div class="col">
         <h4>Preços</h4>
-        <div class="card-deck mb-3 text-center">
-          <div class="card mb-4 shadow-sm">
+        <div class="card-deck mb-3 text-center" id="mercado">
+          <div class="card mb-4 shadow-sm" id="mercado-card">
             <div class="card-header">
-              <h4 class="my-0 font-weight-normal">Extra</h4>
+              <h4 class="my-0 font-weight-normal" id="title"></h4>
             </div>
-            <img src="imagens/extra.jpg" class="card-img-top" alt="#">
+            <img class="card-img-top" alt="#" id="imagem">
             <div class="card-body">
-              <h1 class="card-title pricing-card-title">R$13,00</h1>
-              <button type="button" class="btn btn-lg btn-block btn-outline-primary">Localização</button>
-            </div>
-          </div>
-          <div class="card mb-4 shadow-sm">
-            <div class="card-header">
-              <h4 class="my-0 font-weight-normal">ABC</h4>
-            </div>
-            <img src="imagens/abc.png" class="card-img-top" alt="#">
-            <div class="card-body">
-              <h1 class="card-title pricing-card-title">R$13,10</h1>
-              <button type="button" class="btn btn-lg btn-block btn-outline-primary">Localização</button>
-            </div>
-          </div>
-          <div class="card mb-4 shadow-sm">
-            <div class="card-header">
-              <h4 class="my-0 font-weight-normal">Supernosso</h4>
-            </div>
-            <img src="imagens/supernosso.png" class="card-img-top" alt="#">
-            <div class="card-body">
-              <h1 class="card-title pricing-card-title">R$13,15</h1>
-              <button type="button" class="btn btn-lg btn-block btn-outline-primary">Localização</button>
-            </div>
-          </div>
-          <div class="card mb-4 shadow-sm">
-            <div class="card-header">
-              <h4 class="my-0 font-weight-normal">Supermercado Bh</h4>
-            </div>
-            <img src="imagens/bh.jpg" class="card-img-top" alt="#">
-            <div class="card-body">
-              <h1 class="card-title pricing-card-title">R$13,65</h1>
-              <button type="button" class="btn btn-lg btn-block btn-outline-primary">Localização</button>
-            </div>
-          </div>
-          <div class="card mb-4 shadow-sm">
-            <div class="card-header">
-              <h4 class="my-0 font-weight-normal">Dia</h4>
-            </div>
-            <img src="imagens/dia.png" class="card-img-top" alt="#">
-            <div class="card-body">
-              <h1 class="card-title pricing-card-title">R$13,80</h1>
+              <h1 class="card-title pricing-card-title" id="preco"></h1>
               <button type="button" class="btn btn-lg btn-block btn-outline-primary">Localização</button>
             </div>
           </div>
