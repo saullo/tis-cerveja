@@ -1,57 +1,51 @@
+
 $(document).ready(function() {
   init()
 })
 
+var markets = []
+var product = {}
+
 function init() {
-  var dbfake = {
-    "mercados": [
-      {
-        "id": 1,
-        "mercado": "ABC",
-        "img": "imagens/abc.png",
-        "preco": "13,00"
-      },
-      {
-        "id": 2,
-        "mercado": "Extra",
-        "img": "imagens/extra.jpg",
-        "preco": "13,45"
-      },
-      {
-        "id": 3,
-        "mercado": "Supermercado Bh",
-        "img": "imagens/bh.jpg",
-        "preco": "13,50"
-      },
-      {
-        "id": 4,
-        "mercado": "Dia",
-        "img": "imagens/dia.png",
-        "preco": "13,55"
-      },
-      {
-        "id": 5,
-        "mercado": "supernosso",
-        "img": "imagens/supernosso.png",
-        "preco": "13,60"
-      }
-    ]
-  }
-  // Caso exista no Local Storage, recupera os dados salvos
-  var db = JSON.parse(localStorage.getItem('db'));
-  if (!db) {
-    db = dbfake
-  };
-  
-  var items = db.mercados
-  mercadoMelhor(items)
-  mercadoPrecos(items)
+  // Get product from db by query in url
+  getProduct()
+  // Show the product
+  showProduct()
+  // Show the top markets of product
+  showTopMarkets()
+  // Show all the markets of product
+  showMarkets()
 }
 
-function mercadoPrecos(items) {
+function getProduct() {
+  // Load products from db
+  let products = db.produtos
+  // Get url params
+  let urlParams = new URLSearchParams(window.location.search);
+  let id = urlParams.get('id')
+  // Find the item in db
+  products.forEach(function(element) {
+    if (element.id == id) {
+      product = element
+      markets = product.mercados
+    }
+  })
+}
+
+function showProduct() {
+  let image = $('#product-image')
+  let title = $('#product-title')
+  let desc = $('#product-desc')
+
+  title.html(product.nome)
+  desc.html(product.marca)
+  image.attr('src', product.img)
+}
+
+function showMarkets() {
   let mercado = $("#mercado")
   let mercadoCard = $('#mercado-card')
-  items.forEach(function(element) {
+  markets.forEach(function(element) {
     let cardAtual = mercadoCard.clone()
     let title = cardAtual.children().children('#title')
     let preco = cardAtual.children().children('#preco')
@@ -66,10 +60,13 @@ function mercadoPrecos(items) {
   mercadoCard.hide()
 }
 
-function mercadoMelhor(items) {
+function showTopMarkets(items) {
   let mercado = $("#mercado-precos")
   let mercadoCard = $("#mercado-precos-card")
-  items.slice(0, 2).forEach(function(element) {
+
+  //markets.sorter();
+
+  markets.slice(0, 2).forEach(function(element) {
     let cardAtual = mercadoCard.clone()
     let title = cardAtual.children().children('#title')
     let preco = cardAtual.children().children('#preco')
@@ -82,31 +79,4 @@ function mercadoMelhor(items) {
     mercado.append(cardAtual)
   })
   mercadoCard.hide()
-}
-
-function adiciona() {
-  // Calcula novo Id a partir do último código existente no array
-  let novoId = db.data[db.data.length - 1].id + 1;
-  let novoContato = {
-      "id": novoId,
-      "nome": contato.nome,
-      "email": contato.email,
-      "telefone": contato.telefone,
-      "website": contato.website
-  };
-
-  // Insere o novo objeto no array
-  db.data.push(novoContato);
-  displayMessage("Contato inserido com sucesso");
-
-  // Atualiza os dados no Local Storage
-  localStorage.setItem('db', JSON.stringify(db));
-}
-
-function edita() {
-
-}
-
-function remove() {
-
 }

@@ -10,6 +10,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="scripts/db.js"></script>
   <script src="scripts/product.js"></script>
 </head>
 <body>
@@ -23,23 +24,24 @@
       
     </div>
   </nav>
+  
   <div class="container-fluid" style="margin-top:10px;">
     <div class="row">
       <div class="col-lg-4">
-        <img src="imagens/cerveja1.webp" class="img-fluid">
+        <img id="product-image" class="img-fluid">
       </div>
       <div class="col">
         <ul class="list-unstyled">
           <li class="media">
             <div class="media-body">
               <h5 class="mt-0 mb-1">Nome cerveja</h5>
-              Eisenbahn Pilsen Long Neck
+              <p id="product-title"></p>
             </div>
           </li>
           <li class="media">
             <div class="media-body">
               <h5 class="mt-0 mb-1">Marca</h5>
-              DescriçãoEisenbahn
+              <p id="product-desc"></p>
             </div>
           </li>
         </ul>
