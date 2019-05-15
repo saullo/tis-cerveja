@@ -7,6 +7,7 @@ var markets = []
 var product = {}
 
 function init() {
+  checkIfLogged()
   // Get product from db by query in url
   getProduct()
   // Show the product
@@ -15,6 +16,14 @@ function init() {
   showTopMarkets()
   // Show all the markets of product
   showMarkets()
+}
+
+function checkIfLogged() {
+  let db = localStorage.getItem('isLogged')
+  console.log(db)
+  if (db == false || db == null) {
+    window.location.replace('login.html')
+  }
 }
 
 function getProduct() {

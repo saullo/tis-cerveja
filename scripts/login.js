@@ -43,7 +43,7 @@ function login() {
     error.html('A senha está errada')
   } else {
     localStorage.setItem('isLogged', true)
-    window.location.replace("produtos.html");
+    window.location.replace("index.html");
   }
 }
 

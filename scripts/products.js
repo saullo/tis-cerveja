@@ -3,8 +3,17 @@ $(document).ready(function() {
 })
 
 function init () {
+  checkIfLogged()
   // Get all products
   getProducts()
+}
+
+function checkIfLogged() {
+  let db = localStorage.getItem('isLogged')
+  console.log(db)
+  if (db == false || db == null) {
+    window.location.replace('login.html')
+  }
 }
 
 function getProducts () {
