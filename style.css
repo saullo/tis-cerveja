@@ -1,0 +1,81 @@
+.grid {
+  display: grid;
+  grid-template-columns: 4fr 4fr;
+  grid-template-rows: 400px;
+  grid-gap: 2px;
+  margin-top: -5px;
+}
+
+.logo {
+  height: 100%;
+
+  /* display: flex */
+  align-items: center;
+  justify-content: center;
+}
+
+img.logo {
+  width: 70px;
+  height: 70px;
+  margin-left: 30px;
+  padding-top: 10px;
+}
+
+.header {
+  height: 90px;
+  display: flex;
+  background-color: #ffd966;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  margin-right: 25px;
+}
+
+.button {
+  width: 100px;
+  height: 40px;
+  background-color: black;
+  color: white;
+  border: 0 solid;
+  border-radius: 10px;
+}
+
+.button:hover {
+  background-color: white;
+  color: black;
+}
+
+#sl_imag {
+  margin-left: 0;
+  width: 100%;
+}
+
+.sl_imag {
+  width: 100%;
+  height: 600px;
+}
+
+.sobre {
+  background: white;
+}
+
+img.sobre {
+  height: 100%;
+  width: 100%;
+}
+
+.gridmercado {
+  display: grid;
+  grid-template-columns: 1.5fr 1.5fr 1.5fr 1.5fr 1.5fr;
+  grid-template-rows: 300px;
+  grid-gap: 30px;
+  margin-left: 120px;
+  margin-right: 120px;
+}
