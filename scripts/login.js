@@ -35,15 +35,20 @@ function login() {
   const db = JSON.parse(localStorage.getItem('users'))
   console.log(db)
 
-  if (db.email != email[0].value) {
-    let error = $('#error-email')
-    error.html('O email não existe')
-  } else if(db.password != password[0].value) {
-    let error = $('#error-password')
-    error.html('A senha está errada')
+  if (db) {
+    if (db.email != email[0].value) {
+      let error = $('#error-email')
+      error.html('O email não existe')
+    } else if(db.password != password[0].value) {
+      let error = $('#error-password')
+      error.html('A senha está errada')
+    } else {
+      localStorage.setItem('isLogged', true)
+      window.location.replace("index.html");
+    }
   } else {
-    localStorage.setItem('isLogged', true)
-    window.location.replace("index.html");
+    let error = $('#error-email')
+    error.html('Usuario não cadastrado')
   }
 }
 
