@@ -33,7 +33,6 @@ function validate() {
 
 function login() {
   const db = JSON.parse(localStorage.getItem('users'))
-  console.log(db)
 
   if (db) {
     if (db.email != email[0].value) {
