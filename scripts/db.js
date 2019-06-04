@@ -13,7 +13,7 @@ var dbfake = {
       "mercados": [
         {
           "id": 1,
-          "mercado": "ABC",
+          "mercado": "Epa",
           "img": "imagens/abc.png",
           "preco": "13,00"
         },
@@ -37,7 +37,7 @@ var dbfake = {
         },
         {
           "id": 5,
-          "mercado": "supernosso",
+          "mercado": "Supernosso",
           "img": "imagens/supernosso.png",
           "preco": "13,60"
         }

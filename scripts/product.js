@@ -56,17 +56,31 @@ function showMarkets() {
   let mercadoCard = $('#mercado-card')
   markets.forEach(function(element) {
     let cardAtual = mercadoCard.clone()
-    let title = cardAtual.children().children('#title')
-    let preco = cardAtual.children().children('#preco')
-    let imagem = cardAtual.children('#imagem')
-
-    title.html(element.mercado)
-    preco.html(`R$${element.preco}`)
-    imagem.attr('src', element.img)
+    initMarkets(cardAtual, element)
 
     mercado.append(cardAtual)
   })
   mercadoCard.hide()
+}
+
+function initMarkets(cardAtual, element) {
+  let title = cardAtual.children().children('#title')
+  let preco = cardAtual.children().children('#preco')
+  let imagem = cardAtual.children('#imagem')
+  let local = cardAtual.children().children('#local')
+
+  title.html(element.mercado)
+  preco.html(`R$${element.preco}`)
+  imagem.attr('src', element.img)
+  
+  local.click(() => {
+    $('#modal').modal('show')
+    initMap(element.mercado)
+  })
+
+  $('#modal').on('hidden.bs.modal', function (e) {
+    $('#map').html('')
+  })
 }
 
 function showTopMarkets(items) {
@@ -77,13 +91,7 @@ function showTopMarkets(items) {
 
   markets.slice(0, 2).forEach(function(element) {
     let cardAtual = mercadoCard.clone()
-    let title = cardAtual.children().children('#title')
-    let preco = cardAtual.children().children('#preco')
-    let imagem = cardAtual.children('#imagem')
-
-    title.html(element.mercado)
-    preco.html(`R$${element.preco}`)
-    imagem.attr('src', element.img)
+    initMarkets(cardAtual, element)
 
     mercado.append(cardAtual)
   })
