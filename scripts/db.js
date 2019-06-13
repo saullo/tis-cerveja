@@ -158,8 +158,89 @@ var dbfake = {
           "img": "imagens/supernosso.png",
           "preco": "13,60"
         }
+        
       ]
-    }
+    },
+    {
+      "id": 5,
+      "nome": "Brewing",
+      "marca": "Ceverjaria Brewing",
+      "img": "imagens/brewing.webp",
+      "preco": "14,00",
+      "mercados": [
+        {
+          "id": 1,
+          "mercado": "ABC",
+          "img": "imagens/abc.png",
+          "preco": "13,00"
+        },
+        {
+          "id": 2,
+          "mercado": "Extra",
+          "img": "imagens/extra.jpg",
+          "preco": "13,45"
+        },
+        {
+          "id": 3,
+          "mercado": "Supermercado Bh",
+          "img": "imagens/bh.jpg",
+          "preco": "13,50"
+        },
+        {
+          "id": 4,
+          "mercado": "Dia",
+          "img": "imagens/dia.png",
+          "preco": "13,55"
+        },
+        {
+          "id": 5,
+          "mercado": "supernosso",
+          "img": "imagens/supernosso.png",
+          "preco": "13,60"
+        }
+        
+      ]
+    },
+    {
+      "id": 6,
+      "nome": "Brewing",
+      "marca": "Ceverjaria Brewing",
+      "img": "imagens/brewing.webp",
+      "preco": "14,00",
+      "mercados": [
+        {
+          "id": 1,
+          "mercado": "ABC",
+          "img": "imagens/abc.png",
+          "preco": "13,00"
+        },
+        {
+          "id": 2,
+          "mercado": "Extra",
+          "img": "imagens/extra.jpg",
+          "preco": "13,45"
+        },
+        {
+          "id": 3,
+          "mercado": "Supermercado Bh",
+          "img": "imagens/bh.jpg",
+          "preco": "13,50"
+        },
+        {
+          "id": 4,
+          "mercado": "Dia",
+          "img": "imagens/dia.png",
+          "preco": "13,55"
+        },
+        {
+          "id": 5,
+          "mercado": "supernosso",
+          "img": "imagens/supernosso.png",
+          "preco": "13,60"
+        }
+        
+      ]
+    },
   ],
 }
 

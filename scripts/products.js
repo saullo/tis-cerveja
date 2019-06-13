@@ -20,15 +20,20 @@ function getProducts () {
   // Load products from db
   let products = db.produtos
   let productsEl = $("#products")
+  let productsE2 = $("#products2")
   let productItem = $("#product-item")
   products.forEach(function(element) {
     let item = productItem.clone()
-    item.attr('id', `product-item#${element.id}`)
 
-    let title = item.children().children('#title')
-    let price = item.children().children('#price')
-    let link = item.children().children("#link")
-    let image = item.children('#image')
+    item.attr('id', `product-item#${element.id}`)
+    item.attr('key', element.id)
+
+    let itemGroup = item.children().children()
+    
+    let title = itemGroup.children('#title')
+    let price = itemGroup.children('#price')
+    let link = itemGroup.children("#link")
+    let image = item.children().children('#image')
 
     title.html(element.nome)
     price.html(element.preco)
@@ -36,6 +41,7 @@ function getProducts () {
     image.attr('src', element.img)
 
     productsEl.append(item)
+    //productsE2.append(item)
   })
   productItem.remove()
 }
