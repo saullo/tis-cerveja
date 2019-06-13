@@ -20,21 +20,52 @@
                 <img src="http://skeavee.com/imagens/logo-tis1.png" onclick="window.location.href = 'index.html';" class="logo">
             </div>
         </header>
-        <div class="container-fluid" style="margin-top:10px;">
-            <div class="row">
-                <div class="col">
-                    <div class="card-deck mb-3 text-center" id="products">
-                        <div class="card" id="product-item">
-                            <img id="image" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title" id="title"></h5>
-                                <p class="card-text" id="price"></p>
-                                <a id="link" class="btn btn-primary">SAIBA MAIS</a>
+        <div class="index">
+            <div class="bordat">                  
+                <div> 
+                    <h2>Filtrar cevejas:</h2> 
+                    <form> 
+                        <input type="checkbox" name="preco"> Preço 
+                        <br> 
+                        <input type="checkbox" name="mercados"> Mercados 
+                        <br> 
+                        <input type="checkbox" name="localizacao"> Localização 
+                        <br> 
+                        <input type="checkbox" name="avaliacao"> Avaliação 
+                        <br> 
+                        <input type="checkbox" name="marca"> Marca 
+                        <br> 
+                    </form>                     
+                </div>                 
+                <div id="menu_prod"> 
+                    <h2> Sabor</h2> 
+                    <div> 
+                        <img src="http://skeavee.com/imagens/tis/c1.png" width="70"> 
+                        <img src="http://skeavee.com/imagens/tis/c2.png" width="70"> 
+                        <img src="http://skeavee.com/imagens/tis/c3.png" width="70"> 
+                        <br> 
+                        <img src="http://skeavee.com/imagens/tis/c4.png" width="70"> 
+                        <img src="http://skeavee.com/imagens/tis/c5.png" width="70"> 
+                        <img src="http://skeavee.com/imagens/tis/c6.png" width="70"> 
+                    </div>                     
+                </div>                 
+            </div>
+            <div class="container-fluid" style="margin-left: 20px; margin-top: 10px;">
+                <div class="row">
+                    <div class="col" style="display: grid;">
+                        <div class="card-deck mb-3 text-center" id="products">
+                            <div class="card" id="product-item">
+                                <img id="image" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title" id="title"></h5>
+                                    <p class="card-text" id="price"></p>
+                                    <a id="link" class="btn btn-primary">SAIBA MAIS</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>             
+                </div>                 
+            </div>
         </div>
     </body>
 </html>
