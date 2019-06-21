@@ -52,7 +52,7 @@ var dbfake = {
       "mercados": [
         {
           "id": 1,
-          "mercado": "ABC",
+          "mercado": "Epa",
           "img": "imagens/abc.png",
           "preco": "13,00"
         },
@@ -91,7 +91,7 @@ var dbfake = {
       "mercados": [
         {
           "id": 1,
-          "mercado": "ABC",
+          "mercado": "Epa",
           "img": "imagens/abc.png",
           "preco": "43,00"
         },
@@ -130,7 +130,7 @@ var dbfake = {
       "mercados": [
         {
           "id": 1,
-          "mercado": "ABC",
+          "mercado": "Epa",
           "img": "imagens/abc.png",
           "preco": "13,00"
         },
@@ -165,7 +165,7 @@ var dbfake = {
 
 var db = JSON.parse(localStorage.getItem('db'));
 if (!db) {
-  db = dbfake
+  db = dbfake;
 };
 
 function init() {

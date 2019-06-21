@@ -20,7 +20,7 @@ function init() {
 
 function checkIfLogged() {
   let db = localStorage.getItem('isLogged')
-  console.log(db)
+  console.log(db);
   if (db == false || db == null) {
     window.location.replace('login.html')
   }

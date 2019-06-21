@@ -1,56 +1,81 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Arte do Malte</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        <script src="scripts/db.js"></script>
-        <script src="scripts/products.js"></script>
-        <link href="style.css" rel="stylesheet" type="text/css">
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    </head>
-    <body>
-        <header class="header" style="margin-bottom: 50px;">
-            <div class="logo">
-                <img src="http://skeavee.com/imagens/logo-tis1.png" onclick="window.location.href = 'index.html';" class="logo">
-            </div>
-        </header>
-        <div class="index">
-            <div class="bordat">                  
-                <div> 
-                    <h2>Filtrar cevejas:</h2> 
-                    <form> 
-                        <input type="checkbox" name="preco"> Preço 
-                        <br> 
-                        <input type="checkbox" name="mercados"> Mercados 
-                        <br> 
-                        <input type="checkbox" name="localizacao"> Localização 
-                        <br> 
-                        <input type="checkbox" name="avaliacao"> Avaliação 
-                        <br> 
-                        <input type="checkbox" name="marca"> Marca 
-                        <br> 
-                    </form>                     
-                </div>                 
-                <div id="menu_prod"> 
-                    <h2> Sabor</h2> 
-                    <div> 
-                        <img src="http://skeavee.com/imagens/tis/c1.png" width="70"> 
-                        <img src="http://skeavee.com/imagens/tis/c2.png" width="70"> 
-                        <img src="http://skeavee.com/imagens/tis/c3.png" width="70"> 
-                        <br> 
-                        <img src="http://skeavee.com/imagens/tis/c4.png" width="70"> 
-                        <img src="http://skeavee.com/imagens/tis/c5.png" width="70"> 
-                        <img src="http://skeavee.com/imagens/tis/c6.png" width="70"> 
+<!DOCTYPE html> 
+<html lang="en"> 
+    <head> 
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+        <title>Arte do Malte</title>         
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>         
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>         
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>         
+        <script src="scripts/db.js"></script>         
+        <script src="scripts/products.js"></script>         
+        <script src="scripts/menu.js"></script>         
+        <link href="style.css" rel="stylesheet" type="text/css"> 
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" type="text/css"> 
+    </head>     
+    <body> 
+        <div class="header" style="margin-bottom: 50px;"> 
+            <div class="logo"> 
+                <img src="http://skeavee.com/imagens/logo-tis1.png" onclick="window.location.href = 'index.html';" class="logo"> 
+            </div>             
+        </div>         
+        <header class="submenu">
+            <div class="container"> 
+                <button class="hamburger hamburger--boring" type="button"> 
+                    <span class="hamburger-box"> <span class="hamburger-inner"></span> </span> 
+                    <span class="hamburger-label">FILTROS</span> 
+                </button>                 
+                <nav id="site-nav" role="navigation"> 
+                    <div class="col"> 
+                        <h4 class="tit-submenu">Marcas</h4>
+                        <div>
+                            <select class="custom-select" size="3" style="width: 200px; height: 150px;">
+                                <option selected="">Todas as marcas</option>
+                                <option value="1">Krug</option>
+                                <option value="2">Falker</option>
+                                <option value="3">Wals</option>
+                            </select>
+                        </div>                         
                     </div>                     
-                </div>                 
+                    <div class="col"> 
+                        <h4 class="tit-submenu">Preço</h4>
+                        <input type="range" class="custom-range" min="0" max="150" id="customRange2" value="15" style="margin-top: 10px;"/>
+                        <div>
+                            <p style="width: 20px; float: left; color: #818181;">0</p>
+                            <p style="width: 40px; float: right; color: #818181;">150</p>
+                        </div>                         
+                    </div>                     
+                    <div class="col"> 
+                        <h4 class="tit-submenu">Mercados</h4>
+                        <div>
+                            <select class="custom-select" size="3" style="width: 200px; height: 150px;">
+                                <option selected="">Todos os mercados</option>
+                                <option value="1">Verdemar</option>
+                                <option value="2">Epa</option>
+                                <option value="3">Supernosso</option>
+                                <option value="4">Supermercado BH</option>
+                                <option value="5">Dia</option>
+                            </select>
+                        </div>                         
+                    </div>                     
+                    <div class="col" style="flex: 0 0 26%"> 
+                        <h4 class="tit-submenu">Sabor</h4>
+                        <img class="move" src="imagens/beer1.png" width="80">
+                        <img class="move" src="imagens/beer2.png" width="80">
+                        <img class="move" src="imagens/beer3.png" width="80">
+                        <img class="move" src="imagens/beer4.png" width="80">
+                        <img class="move" src="imagens/beer5.png" width="80">
+                        <img class="move" src="imagens/beer6.png" width="80"> 
+                    </div>                                                                                                                              
+                    <div class="col" style="flex: 0 0 14%"> 
+					</div>
+                </nav>                 
             </div>
-            <div class="container-fluid" style="margin-left: 20px; margin-top: 10px;">
+        </div>
+        </header>		
+	    <div class="container-fluid" style="padding-left: 30px; margin-top: 10px;">
                 <div class="row">
                     <div class="col" style="display: grid;">
                         <div class="card-deck mb-3 text-center" id="products">
@@ -66,6 +91,5 @@
                     </div>
                 </div>                 
             </div>
-        </div>
-    </body>
-</html>
+			</div>
+</body>
