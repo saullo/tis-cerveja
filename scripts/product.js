@@ -1,3 +1,4 @@
+checkIsLogged()
 
 $(document).ready(function() {
   init()
@@ -7,7 +8,6 @@ var markets = []
 var product = {}
 
 function init() {
-  checkIfLogged()
   // Get product from db by query in url
   getProduct()
   // Show the product
@@ -18,17 +18,9 @@ function init() {
   showMarkets()
 }
 
-function checkIfLogged() {
-  let db = localStorage.getItem('isLogged')
-  console.log(db)
-  if (db == false || db == null) {
-    window.location.replace('login.html')
-  }
-}
-
 function getProduct() {
   // Load products from db
-  let products = db.produtos
+  let products = db
   // Get url params
   let urlParams = new URLSearchParams(window.location.search);
   let id = urlParams.get('id')
@@ -75,7 +67,7 @@ function initMarkets(cardAtual, element) {
   
   local.click(() => {
     $('#modal').modal('show')
-    initMap(element.mercado)
+    initMap(element.type)
   })
 
   $('#modal').on('hidden.bs.modal', function (e) {

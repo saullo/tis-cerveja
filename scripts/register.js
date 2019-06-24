@@ -1,104 +1,58 @@
-$(document).ready(function() {
-  init()
+$(document).ready(() => {
+  initForm()
 })
+var name, email, password, birth
+var nameError, emailError, passwordError, birthError
 
-var nome, password, email, birth, checkbox
-
-function init() {
-  initVariables()
-  initListeners()
-}
-
-function initVariables() {
-  // Set all the variables
+function initForm() {
   let form = $('#register')
-  let formContext = form.children()
-  let formContextRow = formContext.children()
 
-  nome = formContextRow.children("#name")
-  password = formContextRow.children("#password")
-  checkbox = formContextRow.children("#checkbox")
-  email = formContext.children("#email")
-  birth = formContext.children("#birth")
-}
+  form.submit((event) => {
+    event.preventDefault()
 
-function initListeners() {
-  $('#submit').click(function(e) {
-    e.preventDefault()
-    validate()
+    let formGroup = form.children()
+    let formRow = form.children().children()
+
+    name = formRow.children('#name').val()
+    email = formGroup.children('#email')
+    password = formRow.children('#password')
+    birth = formGroup.children('#birth')
+
+    nameError = formRow.children('#error-name')
+    emailError = formGroup.children('#error-email')
+    birthError = formGroup.children('#error-birth')
+    passwordError = formRow.children('#error-password')
+
+    if (validate()) {  
+      register(name, email.val(), password.val(), birth.val())
+    }
   })
 }
 
 function validate() {
-  if(!checkName() && !checkPassword() && !checkBirth() && !checkEmail() && !checkCheckbox()) {
-    register()
-  }
+  if (!checkName(name, nameError)) return false
+  if (!checkBirth(birth.val(), birthError)) return false
+  if (!checkEmail(email.val(), emailError)) return false
+  if (!checkPassword(password.val(), passwordError)) return false
+  return true
 }
 
-function register() {
-  let user = {
-    name: nome[0].value,
-    email: email[0].value,
-    password: password[0].value,
-    birth: birth[0].value
-  }
-  localStorage.setItem('users', JSON.stringify(user))
-  window.location.replace("login.html");
-}
-
-function checkName() {
-  let error = $('#error-name')
-  if (nome[0].value == '') {
-    error.html('Nome é obrigatorio')
-    return true;
-  } else {
-    error.html('')
-    return false;
-  }
-}
-
-function checkPassword() {
-  let error = $('#error-password')
-  if (password[0].value == '') {
-    error.html('A senha é obrigatoria')
-    return true;
-  } else if(password[0].value.length < 6) {
-    error.html('A senha deve ter no minimo 6 digitos')
-    return true;
-  } else {
-    error.html('')
-    return false;
-  }
-}
-
-function checkBirth() {
-  let error = $('#error-birth')
-  if (birth[0].value == '') {
-    error.html('A data de nascimento é obrigatoria')
-    return true;
-  } else {
-    error.html('')
-    return false;
-  }
-}
-
-function checkEmail() {
-  let error = $('#error-email')
-  if (email[0].value == '') {
-    error.html('O email é obrigatorio')
-    return true;
-  } else {
-    error.html('')
-    return false;
-  }
-}
-
-function checkCheckbox() {
-  let error = $('#error-checkbox') 
-  if (checkbox[0].checked == false) {
-    error.html('Você precisa aceitar os termos')
-    return true
-  } else {
-    return false
-  }
+function mascaraData( campo, e )
+{
+	var kC = (document.all) ? event.keyCode : e.keyCode;
+	var data = campo.value;
+	
+	if( kC!=8 && kC!=46 )
+	{
+		if( data.length==2 )
+		{
+			campo.value = data += '/';
+		}
+		else if( data.length==5 )
+		{
+			campo.value = data += '/';
+		}
+		else
+			campo.value = data;
+	}
 }

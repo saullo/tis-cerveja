@@ -5,20 +5,20 @@ function initMap(market) {
   let query
 
   switch (market) {
-    case 'Epa':
+    case 0:
       query = 'R. Curitiba, 1001 - Centro, Belo Horizonte - MG, 30170-121'
       break
-    case 'Extra':
+    case 1:
       query = 'Av. Francisco Sales, 898 - Santa Efigênia, Belo Horizonte - MG, 30150-221'
       break
-    case 'Supermercado Bh':
+    case 2:
       query = 'Av. Paraná, 470 - Centro, Belo Horizonte - MG, 30120-020'
       break
-    case 'Dia':
-      query = 'R. da Bahia, 1709 - Lourdes, Belo Horizonte - MG, 30160-011'
-      break
-    case 'Supernosso':
+    case 3: // Supernosso
       query = 'R. Gonçalves Dias, 2001 - Lourdes, Belo Horizonte - MG, 30140-092'
+      break
+    case 4:
+      query = 'R. da Bahia, 1709 - Lourdes, Belo Horizonte - MG, 30160-011'
       break
     default:
       query = ''
