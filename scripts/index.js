@@ -51,6 +51,7 @@ function getProducts () {
     })
     if (
       element.type == beerType && marketType == 0 && beerFlavor == 0 || // Lista pela marca da cerveja
+      element.type == beerType && marketType == 0 && element.flavor == beerFlavor || // List pela marca e pelo sabor
       element.type == beerType && markets.length > 0 && beerFlavor == 0 || // List pela marca e pelo mercado
       element.type == beerType && marketType.length > 0 && element.flavor == beerFlavor || // Lista pela marca, mercado e sabor
       beerType == 0 && markets.length > 0 && beerFlavor == 0 || // Lista pelo mercado
