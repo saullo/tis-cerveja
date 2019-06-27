@@ -61,7 +61,7 @@ function initMarkets(cardAtual, element) {
   let imagem = cardAtual.children('#imagem')
   let local = cardAtual.children().children('#local')
 
-  title.html(element.mercado)
+  title.html(element.nome)
   preco.html(`R$${element.preco}`)
   imagem.attr('src', element.img)
   

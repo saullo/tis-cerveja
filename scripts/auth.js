@@ -1,6 +1,7 @@
 function checkIsLogged() {
-  let user = JSON.parse(localStorage.getItem('user'))
-  if (user == null || user == 'undefined') {
+  let userP = JSON.parse(localStorage.getItem('user'))
+  let user = JSON.parse(sessionStorage.getItem('user'))
+  if (user == null && userP == null || user == 'undefined' && userP == 'undefined') {
     window.location = 'login.html'
   }
 }
