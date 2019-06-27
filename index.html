@@ -44,9 +44,10 @@
                     </div>                     
                     <div class="col"> 
                         <h4 class="tit-submenu">Preço</h4>
-                        <input type="range" class="custom-range" min="0" max="150" id="price_range" value="150" style="margin-top: 10px;"/>
+                        <input type="range" class="custom-range" min="0" max="150" id="price_range" value="150" onchange="updateTextInput(this.value);" style="margin-top: 10px;"/>
                         <div>
                             <p style="width: 20px; float: left; color: #818181;">0</p>
+							<input type="text" id="textInput" value="150" disabled="" style=" width: 100px; text-align: center; background: #818181; border: 0px; color: white;">
                             <p style="width: 40px; float: right; color: #818181;">150</p>
                         </div>                       
                     </div>                     
@@ -82,7 +83,12 @@
         <div class="container-fluid" style="margin-top:10px;">
             <div class="row" id="products">
                 
-            </div>                       
+            </div>  			
         </div>
+		<script>
+		function updateTextInput(val) {
+          document.getElementById('textInput').value=val; 
+        }
+		</script>
     </body>
 </html>
